@@ -1,3 +1,6 @@
+# comand line interface
+# front-end da nossa aplicação, entrega os dados para o terminal. Não são inseridas as lógicas do programa. 
+
 from .config import settings
 
 
