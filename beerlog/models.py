@@ -17,7 +17,7 @@ from datetime import datetime
 
 class Beer (SQLModel, table=True):
     id: Optional[int] = Field(primary_key=True, default=None, index=True)
-    name: str
+    name: str 
     style: str
     flavor: int
     image: int
@@ -29,7 +29,7 @@ class Beer (SQLModel, table=True):
 
 #Sempre que tivermos um @ estamos falando de um decorator que é quando você pega um código que consegue ser aplicado em cima de funções e classes
 
-    @validator("flavor", "image", "cost")
+    @validator("image","flavor","cost")
     def validate_ratings(cls, v, field):
         if v < 1 or v > 10:
             raise RuntimeError(f"{field.name} must be between 1 and 10")
